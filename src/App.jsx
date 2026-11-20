@@ -1,13 +1,15 @@
-import { useState } from "react";
 import "./App.css";
+import Body from "./components/Body";
+import { Provider } from "react-redux";
+import appStore from "./utils/store/appStore";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div className="text-3xl">Netflix GPT</div>
-    </>
+    <main className="min-h-screen bg-[#050505] font-sans text-white antialiased">
+      <Provider store={appStore}>
+        <Body />
+      </Provider>
+    </main>
   );
 }
 
