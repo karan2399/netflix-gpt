@@ -10,12 +10,12 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/slices/userSlice";
+import { BG_IMAGE } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errMessage, setErrMessage] = useState(null);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const name = useRef(null);
 
   const email = useRef(null);
@@ -53,7 +53,6 @@ const Login = () => {
               // Profile updated!
               const { uid, email, displayName } = auth.currentUser;
               dispatch(addUser({ uid, email, displayName }));
-              navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
@@ -78,7 +77,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -93,7 +91,7 @@ const Login = () => {
       <div className="absolute inset-0">
         <img
           className="h-full w-full scale-[1.02] object-cover"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/cafd79d7-3d44-4558-8d0a-fc447fc3899f/web/CA-en-20261116-TRIFECTA-perspective_0cf385b4-2f5b-4a39-a797-c8c40d5cc383_medium.jpg"
+          src={BG_IMAGE}
           alt="Background-Image"
         />
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,.78)_0%,rgba(0,0,0,.28)_45%,rgba(0,0,0,.9)_100%)]" />

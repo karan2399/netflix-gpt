@@ -1,19 +1,40 @@
-import { signOut } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
-import { useSelector } from "react-redux";
-import { log } from "firebase/firestore/pipelines";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { addUser, removeUser } from "../utils/slices/userSlice";
+import { NETFLIX_LOGO, USER_AVATAR } from "../utils/constants";
 
 const Header = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const user = useSelector((store) => store.user);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        const { uid, email, displayName } = user;
+        dispatch(addUser({ uid, email, displayName }));
+        navigate("/browse");
+        // ...
+      } else {
+        // User is signed out
+        dispatch(removeUser());
+        navigate("/");
+      }
+    });
+
+    // Unsubscribe when component unmounts
+    return () => unsubscribe();
+  }, []);
 
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
-        navigate("/");
       })
       .catch((error) => {
         // An error happened.
@@ -24,7 +45,7 @@ const Header = () => {
     <header className="absolute z-20 flex w-full items-center justify-between bg-gradient-to-b from-black/95 via-black/40 to-transparent px-5 py-3 sm:px-10 sm:py-4">
       <img
         className="w-28 cursor-pointer drop-shadow-[0_4px_14px_rgba(0,0,0,.9)] transition-transform duration-200 hover:scale-105 sm:w-36"
-        src="https://occ.a.nflxso.net/dnmt/api/v6/iL4oJVDYZ8KLSrJ6eG2OwtghbfQ/AAAAAf58AA8Z6nusXt5B-ppRug_vXEqLa657gFe5CBe4jVeSA_CxcsmYrZxZZxXSgwU5KA0aGs7lVPrdcDefw_XxI6W0EFno5krXI88dYw3BUM6HEZRO_N4ZTMzoYhMd-g4S3fo8XIxOME4.svg"
+        src={NETFLIX_LOGO}
         alt="Netflix Logo"
       />
       {user && (
@@ -34,7 +55,7 @@ const Header = () => {
           </p>
           <img
             className="h-8 w-8 rounded-full border border-white/20 object-cover shadow-md sm:h-9 sm:w-9"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMPU5gJUj46ufL6FQfX3XvM7lR7qtcMy63tuj2siLuUQ&s=10"
+            src={USER_AVATAR}
             alt="User Icon"
           />
           <button
