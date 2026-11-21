@@ -25,3 +25,18 @@ export const API_TOP_RATED_MOVIES =
 
 export const POSTER_PATH = "https://image.tmdb.org/t/p/w500/";
 export const BACKDROP_PATH = "https://image.tmdb.org/t/p/w780/";
+
+export const SUPPORTED_LANGUAGES = [
+  {
+    identifier: "en",
+    name: "English",
+  },
+  {
+    identifier: "hindi",
+    name: "हिन्दी",
+  },
+  {
+    identifier: "spanish",
+    name: "Español",
+  },
+];

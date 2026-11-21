@@ -27,6 +27,10 @@
 - Update the store with trailer video data
 - Embedded the youtube video, autoplay and mute
 - Build Secondary Component
+- GPT Search Bar
+- Multi -Language Feature in our App
+- Integrate GPT APIs
+- Get OpenAI keys
 
 # Features
 
