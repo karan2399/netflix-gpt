@@ -65,9 +65,9 @@ const Header = () => {
             alt="User Icon"
           />
           <button
-            className="py-2 px-4 m-2 cursor-pointer"
+            className="cursor-pointer rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-white/90 shadow-sm transition duration-200 hover:border-[#e50914]/50 hover:bg-[#e50914]/10 hover:text-white active:scale-[0.98] sm:px-4 sm:text-sm"
             onClick={handleGptClick}>
-            GPT Search
+            AI Search
           </button>
           <button
             className="cursor-pointer rounded-full px-2.5 py-1.5 text-xs font-semibold text-white/90 transition-colors duration-200 hover:bg-white/10 hover:text-white sm:px-3 sm:text-sm"

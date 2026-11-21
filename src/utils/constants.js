@@ -9,8 +9,7 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNGZkY2I2NjdiMDUzYjcxNDI5NWUxMjFmOWY5YjJiYSIsIm5iZiI6MTc3NzY0OTY4Ni44NDgsInN1YiI6IjY5ZjRjODE2NzNjNDNiMjMyNTgxNmFlNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.KqaOJyOy6heLJ5Ohf-l-x5tZ8XS7Pd2Bg06fSp7PEJM",
+    Authorization: "Bearer " + import.meta.env.VITE_TMDB_API_KEY,
   },
 };
 
@@ -22,6 +21,8 @@ export const API_MOVIE_VIDEOS = "https://api.themoviedb.org/3/movie/";
 
 export const API_TOP_RATED_MOVIES =
   "https://api.themoviedb.org/3/movie/top_rated";
+
+export const API_MOVIE_DETAILS = "https://api.themoviedb.org/3/movie/";
 
 export const POSTER_PATH = "https://image.tmdb.org/t/p/w500/";
 export const BACKDROP_PATH = "https://image.tmdb.org/t/p/w780/";
@@ -40,3 +41,5 @@ export const SUPPORTED_LANGUAGES = [
     name: "Español",
   },
 ];
+
+export const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;

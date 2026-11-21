@@ -1,15 +1,21 @@
+import { useNavigate } from "react-router-dom";
 import { BACKDROP_PATH, POSTER_PATH } from "../utils/constants";
 
 const MovieCard = ({ mData }) => {
+  const navigate = useNavigate();
   const title = mData?.title ?? mData?.original_title ?? "Untitled movie";
   const artwork = mData?.backdrop_path
     ? BACKDROP_PATH + mData.backdrop_path
     : mData?.poster_path
       ? POSTER_PATH + mData.poster_path
       : null;
-
+  const handleCardClick = () => {
+    navigate("/details/" + mData.id);
+  };
   return (
-    <article className="group relative w-64 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-zinc-900 shadow-xl transition duration-300 hover:z-10 hover:scale-[1.03] hover:border-white/25 sm:w-80 lg:w-96">
+    <article
+      onClick={handleCardClick}
+      className="group relative w-64 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-zinc-900 shadow-xl transition duration-300 hover:z-10 hover:scale-[1.03] hover:border-white/25 sm:w-80 lg:w-96">
       {artwork ? (
         <img
           className="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -30,9 +36,7 @@ const MovieCard = ({ mData }) => {
           {title}
         </h2>
         <div className="mt-2 flex items-center gap-2 text-xs font-medium text-white/75">
-          {mData?.release_date && (
-            <span>{mData.release_date.slice(0, 4)}</span>
-          )}
+          {mData?.release_date && <span>{mData.release_date.slice(0, 4)}</span>}
           {typeof mData?.vote_average === "number" && (
             <>
               {mData?.release_date && (

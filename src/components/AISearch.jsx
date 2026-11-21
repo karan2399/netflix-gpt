@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toggleGptSearchView } from "../utils/slices/gptSlice";
-import GPTSearchBar from "./GPTSearchBar";
+import AISearchBar from "./AISearchBar";
 
-const GPTSearch = () => {
+const AISearch = () => {
   const [query, setQuery] = useState("");
   const dispatch = useDispatch();
 
@@ -13,9 +13,9 @@ const GPTSearch = () => {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(229,9,20,.18),transparent_55%)]"
       />
-      <GPTSearchBar />
+      <AISearchBar />
     </section>
   );
 };
 
-export default GPTSearch;
+export default AISearch;
