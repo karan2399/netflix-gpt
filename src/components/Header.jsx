@@ -42,7 +42,7 @@ const Header = () => {
       });
   };
   return (
-    <header className="absolute z-20 flex w-full items-center justify-between bg-gradient-to-b from-black/95 via-black/40 to-transparent px-5 py-3 sm:px-10 sm:py-4">
+    <header className="fixed inset-x-0 top-0 z-20 flex w-full items-center justify-between bg-gradient-to-b from-black/95 via-black/40 to-transparent px-5 py-3 sm:px-10 sm:py-4">
       <img
         className="w-28 cursor-pointer drop-shadow-[0_4px_14px_rgba(0,0,0,.9)] transition-transform duration-200 hover:scale-105 sm:w-36"
         src={NETFLIX_LOGO}

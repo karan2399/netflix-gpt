@@ -7,7 +7,7 @@ const VideoBackground = ({ id, poster }) => {
   useMovieTrailer(id);
 
   return (
-    <div className="relative h-[62vh] w-full overflow-hidden bg-[#080808] sm:h-[70vh] md:h-[75vh]">
+    <div className="relative h-screen w-full overflow-hidden bg-[#080808]">
       {poster && (
         <img
           className="absolute inset-0 h-full w-full scale-105 object-cover object-center"
