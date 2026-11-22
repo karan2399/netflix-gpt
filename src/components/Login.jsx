@@ -86,7 +86,7 @@ const Login = () => {
     }
   };
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#050505] font-sans text-white">
+    <div className="relative min-h-screen overflow-x-hidden overflow-y-auto bg-[#050505] font-sans text-white">
       <Header />
       <div className="absolute inset-0">
         <img
@@ -97,10 +97,10 @@ const Login = () => {
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,.78)_0%,rgba(0,0,0,.28)_45%,rgba(0,0,0,.9)_100%)]" />
         <div className="absolute inset-0 backdrop-blur-[1px]" />
       </div>
-      <section className="relative z-10 flex min-h-screen items-center justify-center px-4 py-28 sm:px-6 sm:py-32">
+      <section className="relative z-10 flex min-h-screen items-center justify-center px-4 py-24 sm:px-6 sm:py-32">
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="w-full max-w-[450px] rounded-lg border border-white/[0.08] bg-black/75 p-7 shadow-[0_30px_80px_rgba(0,0,0,.65)] backdrop-blur-md sm:p-12">
+          className="w-full max-w-[450px] rounded-lg border border-white/[0.08] bg-black/75 p-6 shadow-[0_30px_80px_rgba(0,0,0,.65)] backdrop-blur-md sm:p-12">
           <h1 className="pb-7 text-3xl font-bold tracking-tight sm:text-[32px]">
             {" "}
             {isSignInForm ? "Sign In" : "Sign Up"}
@@ -111,6 +111,7 @@ const Login = () => {
               ref={name}
               type="text"
               placeholder="Full Name"
+              autoComplete="name"
               className="mb-4 w-full rounded-md border border-white/20 bg-[#333]/75 px-4 py-4 text-base text-white outline-none transition-colors duration-200 placeholder:text-gray-300 hover:border-white/30 focus:border-white focus:bg-[#454545]"
             />
           )}
@@ -118,12 +119,15 @@ const Login = () => {
           <input
             ref={email}
             type="text"
+            inputMode="email"
+            autoComplete="email"
             placeholder="Email"
             className="mb-4 w-full rounded-md border border-white/20 bg-[#333]/75 px-4 py-4 text-base text-white outline-none transition-colors duration-200 placeholder:text-gray-300 hover:border-white/30 focus:border-white focus:bg-[#454545]"
           />
           <input
             ref={password}
             type="password"
+            autoComplete={isSignInForm ? "current-password" : "new-password"}
             placeholder="Password"
             className="mb-4 w-full rounded-md border border-white/20 bg-[#333]/75 px-4 py-4 text-base text-white outline-none transition-colors duration-200 placeholder:text-gray-300 hover:border-white/30 focus:border-white focus:bg-[#454545]"
           />

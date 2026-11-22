@@ -2,17 +2,17 @@ import React from "react";
 
 const VideoTitle = ({ title, overview }) => {
   return (
-    <div className="absolute inset-0 z-10 flex min-h-screen items-end px-5 pb-36 sm:px-10 sm:pb-40 md:px-16 lg:px-20">
+    <div className="absolute inset-0 z-10 flex items-end px-4 pb-28 sm:px-10 sm:pb-36 md:px-16 lg:px-20">
       <div className="max-w-xl md:max-w-2xl">
         <h1 className="mb-3 max-w-[90%] text-3xl font-black leading-[0.95] tracking-tight text-white drop-shadow-[0_4px_16px_rgba(0,0,0,.85)] sm:text-4xl md:max-w-full md:text-5xl lg:text-6xl">
           {title}
         </h1>
 
-        <p className="mb-5 max-w-lg text-sm leading-relaxed text-white/85 drop-shadow-[0_2px_8px_rgba(0,0,0,.9)] sm:text-base md:max-w-xl md:text-lg">
+        <p className="mb-5 line-clamp-4 max-w-lg text-sm leading-relaxed text-white/85 drop-shadow-[0_2px_8px_rgba(0,0,0,.9)] sm:line-clamp-none sm:text-base md:max-w-xl md:text-lg">
           {overview}
         </p>
 
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3">
           <button
             type="button"
             className="flex cursor-pointer items-center gap-2 rounded-md bg-white px-5 py-2.5 text-sm font-bold text-black shadow-lg transition duration-200 hover:bg-white/80 active:scale-[0.98] sm:px-7 sm:py-3 sm:text-base">

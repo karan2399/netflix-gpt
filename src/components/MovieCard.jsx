@@ -15,7 +15,7 @@ const MovieCard = ({ mData }) => {
   return (
     <article
       onClick={handleCardClick}
-      className="group relative w-64 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-zinc-900 shadow-xl transition duration-300 hover:z-10 hover:scale-[1.03] hover:border-white/25 sm:w-80 lg:w-96">
+      className="group relative w-[min(82vw,18rem)] shrink-0 snap-start overflow-hidden rounded-xl border border-white/10 bg-zinc-900 shadow-xl transition duration-300 hover:z-10 hover:scale-[1.03] hover:border-white/25 sm:w-80 lg:w-96">
       {artwork ? (
         <img
           className="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"

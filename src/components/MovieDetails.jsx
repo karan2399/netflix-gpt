@@ -80,7 +80,7 @@ const MovieDetails = () => {
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#070707] text-white">
-      <section className="relative flex min-h-[78vh] items-end overflow-hidden sm:min-h-[84vh]">
+      <section className="relative flex min-h-[78svh] items-end overflow-hidden sm:min-h-[84svh]">
         <img
           className="absolute inset-0 h-full w-full object-cover object-center"
           src={backdrop}
@@ -117,7 +117,7 @@ const MovieDetails = () => {
             <span className="h-1.5 w-1.5 rounded-full bg-[#e50914]" />
             Featured film
           </p>
-          <h1 className="max-w-4xl text-4xl font-black leading-[0.95] tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,.7)] sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-4xl break-words text-3xl font-black leading-[0.98] tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,.7)] sm:text-5xl sm:leading-[0.95] lg:text-7xl">
             {title}
           </h1>
           {tagline && (

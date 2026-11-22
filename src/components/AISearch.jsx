@@ -8,7 +8,7 @@ const AISearch = () => {
   const dispatch = useDispatch();
 
   return (
-    <section className="fixed inset-0 z-30 flex min-h-screen items-center justify-center overflow-y-auto bg-black/75 px-4 py-20 backdrop-blur-md">
+    <section className="fixed inset-0 z-30 flex min-h-screen items-start justify-center overflow-y-auto bg-black/75 px-3 py-12 backdrop-blur-md sm:items-center sm:px-4 sm:py-20">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(229,9,20,.18),transparent_55%)]"

@@ -12,7 +12,7 @@ const MainContainer = () => {
 
   const { id, original_title, overview, poster_path } = mainMovie;
   return (
-    <div className="relative h-screen">
+    <div className="relative h-[86svh] min-h-[28rem] sm:h-screen sm:min-h-[40rem]">
       <VideoBackground id={id} poster={poster_path} />
       <VideoTitle title={original_title} overview={overview} />
     </div>

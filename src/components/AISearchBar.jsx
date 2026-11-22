@@ -60,7 +60,7 @@ const AISearchBar = () => {
 
   return (
     <div className="w-full max-w-3xl">
-      <div className="relative w-full overflow-hidden rounded-3xl border border-white/10 bg-linear-to-br from-[#1a1a1a]/95 via-[#111]/95 to-[#080808]/95 p-5 shadow-[0_30px_100px_rgba(0,0,0,.7)] sm:p-8 lg:p-10">
+      <div className="relative w-full overflow-hidden rounded-3xl border border-white/10 bg-linear-to-br from-[#1a1a1a]/95 via-[#111]/95 to-[#080808]/95 p-4 shadow-[0_30px_100px_rgba(0,0,0,.7)] sm:p-8 lg:p-10">
         <div
           aria-hidden="true"
           className="absolute inset-x-8 top-0 h-px bg-linear-to-r from-transparent via-[#e50914]/80 to-transparent"
@@ -98,7 +98,7 @@ const AISearchBar = () => {
               <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" />
             </svg>
             <select
-              className="w-18 cursor-pointer appearance-none bg-transparent py-2 pl-1.5 pr-5 text-xs font-medium text-white outline-none"
+              className="w-20 cursor-pointer appearance-none bg-transparent py-2 pl-1.5 pr-5 text-xs font-medium text-white outline-none"
               aria-label={lang[language].chooseLanguage}
               value={language}
               onChange={(event) =>
@@ -124,7 +124,7 @@ const AISearchBar = () => {
             </svg>
           </label>
         </div>
-        <h1 className="max-w-xl text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+        <h1 className="max-w-xl text-2xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
           {lang[language].gptSearchPlaceholder}
         </h1>
         <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/60 sm:text-base">
@@ -228,7 +228,7 @@ const AISearchBar = () => {
               </svg>
               {lang[language].recommendationsTitle}
             </h2>
-            <p className="whitespace-pre-line text-sm leading-relaxed text-white/75">
+            <p className="whitespace-pre-line break-words text-sm leading-relaxed text-white/75">
               {recommendations}
             </p>
           </div>
